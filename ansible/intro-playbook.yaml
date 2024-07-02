@@ -1,6 +1,6 @@
 ---
 - name: Intro to Ansible Playbooks
-  hosts: all
+  hosts: localhost
 
   tasks:
   - name: Copy Linux host file with permissions
@@ -8,9 +8,9 @@
       src: /etc/hosts
       dest: /tmp/hosts_backup
       mode: '0644'
-  - name: Add the user 'devopsuser2'
+  - name: Add the user 'devopsuser500'
     ansible.builtin.user:
-      name: devopsuser2
+      name: devopsuser500
     become: yes
     become_method: sudo
   - name: Upgrade all apt packages (equivalent to apt-get update)
